@@ -13,9 +13,6 @@ app.use(express.json());
 app.use(userRoutes);
 app.use(messageRoute);
 
-
-console.log("checking git")
-
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => {
@@ -31,7 +28,7 @@ const server = app.listen( PORT , () => {
 
 const io = socket(server, {
   cors: {
-    "Access-Control-Allow-Origin": "https://mernchatapplication.vercel.app",
+    "Access-Control-Allow-Origin": "https://chatify-chatapp.netlify.app",
     credentials: true,
   },
 });
